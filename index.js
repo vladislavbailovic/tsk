@@ -1,3 +1,4 @@
+/*
 var Task = require('./lib/task');
 
 var data = {
@@ -22,5 +23,15 @@ Task.create('test2', data)
 
 
 Task.load('test2').then(function (t) {
-	console.log(t);
+	console.log(t.get_meta('modified'));
+});
+*/
+
+var Tasks = require('./lib/tasks');
+Tasks.list({
+	created: '2016-09-02T07:20'
+}).then(function () {
+	console.log("received", arguments)
+}).catch(function () {
+	console.log("error", arguments)
 });
