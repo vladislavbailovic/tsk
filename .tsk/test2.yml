@@ -1,4 +1,8 @@
 meta:
     created: '2016-09-02T07:20'
+    modified: '2016-08-02T06:13:35Z'
+    assigned: ""
+    creator: ve@incsub.com
+    followers: [ve@incsub.com]
 task: "\nTask title\n==========\nTask content goes here\n\t"
 discussion: []

@@ -1,5 +1,5 @@
 var Task = require('./lib/task');
-/*
+
 var data = {
 	meta: {
 		created: '2016-09-02T07:20',
@@ -13,14 +13,14 @@ Task content goes here
 
 Task.create('test2', data)
 	.then(function (task) {
-		console.log(task);
+		console.log("~~~ all done ~~~");
 	})
 	.catch(function (err) {
 		console.log(arguments);
 	})
 ;
-*/
 
-Task.load('test').then(function (t) {
+
+Task.load('test2').then(function (t) {
 	console.log(t);
 });
