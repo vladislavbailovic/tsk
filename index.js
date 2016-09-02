@@ -28,10 +28,14 @@ Task.load('test2').then(function (t) {
 */
 
 var Tasks = require('./lib/tasks');
+var NOBODY = '[^\'"\n ]+',
+	EMPTY_LIST = '\\[\\]'
+;
 Tasks.list({
-	created: '2016-09-02T07:20'
-}).then(function () {
-	console.log("received", arguments)
+	assigned: NOBODY,
+	followers: EMPTY_LIST
+}).then(function (tasks) {
+	console.log("received", tasks.length)
 }).catch(function () {
 	console.log("error", arguments)
 });
