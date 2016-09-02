@@ -1,0 +1,11 @@
+meta:
+    created: '2016-09-02T06:15:02Z'
+    modified: '2016-09-02T06:15:02Z'
+    assigned: ve@incsub.com
+    creator: ve@incsub.com
+    followers: [ve@incsub.com, vebailovity@gmail.com]
+content: "\nImplement `tsk` CRUD for tasks\n================================\n\nOkay, so the first order of business is to implement a set of CRUD operations for the `tsk`.\n\nBut before that, I need to decide on the format. Currently looking into YAML, which is what\nthis thing is for.\n\n\t> It needs to preserve stuff such as linebreaks and indentations.\n\t\t> E.g. this is an indented response\n\n```\n// and a code example right here\n```\n\n- How about\n- Some\n- Lists here?\n\n---\n\nThis ^ is a HR line separator.\n\nYeah, this all needs to work\n"
+discussion:
+    - "\nFrom:ve@incsub.com\nAt:2016-09-02T06:26:00Z\nSome *markdown* content here\n"
+    - "\nFrom:vebailovity@gmail.com\nAt:2016-09-02T06:36:00Z\nYeah, and this is another example.\n\nCan be multiline, np.\n"
+
