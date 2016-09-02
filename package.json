@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "remarkable": "^1.6.2",
     "yamljs": "^0.2.8"
   }
 }
