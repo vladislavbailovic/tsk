@@ -9,7 +9,7 @@ tap.test('util/date.js', function (t) {
 
 		t.ok(tstamp, "Timestamp is generated");
 		t.type(tstamp, "string", "Timestamp is string");
-		t.match(tstamp, /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z/, "Timestamp is in proper format");
+		t.match(tstamp, /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z$/, "Timestamp is in proper format");
 
 		t.end();
 	});
@@ -21,8 +21,9 @@ tap.test('util/date.js', function (t) {
 		;
 
 		t.ok(result, "Timestamp is parsed");
-		t.type(tstamp, "number", "Timestamp is a number");
-		t.equal(now, result, "Parsed timestamp matches original");
+		t.type(result, "number", "Result is a number");
+		t.ok(result > 0, "Result is a non-negative number");
+		t.equal(tsk.date.fmt(result), tstamp, "Parsed timestamp matches original: " + tstamp);
 
 		t.end();
 	});
