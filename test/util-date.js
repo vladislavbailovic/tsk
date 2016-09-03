@@ -14,7 +14,17 @@ tap.test('util/date.js', function (t) {
 		t.end();
 	});
 
-	t.test('date.fmt', function (t) {
+	t.test('date.parse - failure handling', function (t) {
+		var result = tsk.date.parse("something wrong here");
+
+		t.type(result, "number", "Result is a number");
+		t.notOk(result, "Timestamp is parsed, but it's false-ish");
+		t.ok(isNaN(result), "Result is a NaN");
+
+		t.end();
+	});
+
+	t.test('date.parse - now', function (t) {
 		var now = Date.now(),
 			tstamp = tsk.date.fmt(now),
 			result = tsk.date.parse(tstamp)
