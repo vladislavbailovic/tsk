@@ -21,12 +21,14 @@ Task.create('test2', data)
 	})
 ;
 
+*/
 
+var Task = require('./lib/task');
 Task.load('test2').then(function (t) {
 	console.log(t.get_meta('modified'));
 });
-*/
 
+/*
 var Tasks = require('./lib/tasks');
 var NOBODY = '[^\'"\n ]+',
 	EMPTY_LIST = '\\[\\]'
@@ -39,3 +41,4 @@ Tasks.list({
 }).catch(function () {
 	console.log("error", arguments)
 });
+*/
