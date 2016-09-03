@@ -4,7 +4,8 @@
   "description": "Tsk is an embedded task management toolset",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "tap test/*.js",
+	"coverage": "tap test/*.js --cov"
   },
   "author": "",
   "license": "ISC",
@@ -12,6 +13,7 @@
     "glob": "^7.0.6",
     "remarkable": "^1.6.2",
     "sprintf": "^0.1.5",
+    "tap": "^7.0.0",
     "yamljs": "^0.2.8"
   }
 }
