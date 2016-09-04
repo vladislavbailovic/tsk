@@ -24,8 +24,13 @@ Task.create('test2', data)
 */
 
 var Task = require('./lib/task');
+/*
 Task.load('test2').then(function (t) {
 	console.log(t.get_meta('modified'));
+});
+*/
+Task.load('test3').then(function (t) {
+	console.log(t.get_html());
 });
 
 /*
