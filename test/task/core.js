@@ -2,8 +2,8 @@ var tap = require('tap');
 
 tap.test('task/core.js', function (t) {
 
-	var Task = require('../lib/task/core'),
-		tsk = require('../lib/util')
+	var Task = require('../../lib/task/core'),
+		tsk = require('../../lib/util')
 	;
 
 	t.test('task.load', function (t) {
