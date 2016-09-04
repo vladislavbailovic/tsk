@@ -27,7 +27,11 @@ tap.test('task/core.js', function (t) {
 
 		tmp = task.get_valid_meta('followers', "aaa");
 		t.ok(tmp instanceof Array, "Invalid followers become an array");
-		//t.ok(0 === tmp.length, "Invalid followers become an *empty* array");
+		t.ok(0 === tmp.length, "Invalid followers become an *empty* array");
+
+		tmp = task.get_valid_meta('followers', "aaa,bbb,ccc");
+		t.ok(tmp instanceof Array, "Invalid CSV followers become an array");
+		t.ok(0 === tmp.length, "Invalid CSV followers become an *empty* array");
 
 		t.end();
 	});
