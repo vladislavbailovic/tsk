@@ -75,6 +75,14 @@ tap.test('task/core.js', function (t) {
 		return prm;
 	});
 
+	t.test('task.get_html', function (t) {
+		var task = new Task();
+		task.task = 'Test *data* here';
+
+		t.ok(task.get_html().length, "Rendering task returns non-empty string");
+		t.end();
+	});
+
 	t.end();
 
 });
