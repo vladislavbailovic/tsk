@@ -2,7 +2,7 @@ var tap = require('tap');
 
 tap.test('util/date.js', function (t) {
 
-	var tsk = require('../../lib/util');
+	var tsk = require('../lib/util');
 
 	t.test('date.fmt', function (t) {
 		var tstamp = tsk.date.fmt();

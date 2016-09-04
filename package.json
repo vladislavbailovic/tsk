@@ -4,8 +4,8 @@
   "description": "Tsk is an embedded task management toolset",
   "main": "index.js",
   "scripts": {
-    "test": "tap test/**/*.js",
-	"coverage": "tap test/**/*.js --cov"
+    "test": "tap test/*.js --strict",
+	"coverage": "tap test/*.js --cov"
   },
   "author": "",
   "license": "ISC",
