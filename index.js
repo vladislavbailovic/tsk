@@ -28,19 +28,44 @@ var Task = require('./lib/task');
 Task.load('test2').then(function (t) {
 	console.log(t.get_meta('modified'));
 });
-*/
 Task.load('test3').then(function (t) {
 	console.log(t.get_html());
 });
+*/
+
+
+var Tasks = require('./lib/tasks');
+var NOBODY = '[\'"\\s]+$',
+	ANYBODY = '[\'"]?[^\'"]+[\'"]?\\s*$',
+	EMPTY_LIST = '\\[\\]',
+	NON_EMPTY_LIST = '\\[[^\\]]+\\]'
+;
+
+Tasks.filter({
+	/*and: [
+		{assigned: NOBODY}
+	],*/
+	/*
+	or: [
+		{assigned: ANYBODY},
+		{followers: NON_EMPTY_LIST}
+	]
+	*/
+	and: [
+		{assigned: NOBODY},
+		{followers: NON_EMPTY_LIST}
+	]
+}).then(function (tasks) {
+	console.log("received", tasks.length);
+	if (tasks.length) console.log(tasks.map(function (t) { return t.slug; }).join(","));
+}).catch(function () {
+	console.log("error", arguments)
+});
 
 /*
-var Tasks = require('./lib/tasks');
-var NOBODY = '[^\'"\n ]+',
-	EMPTY_LIST = '\\[\\]'
-;
 Tasks.list({
 	assigned: NOBODY,
-	followers: EMPTY_LIST
+	//followers: EMPTY_LIST
 }).then(function (tasks) {
 	console.log("received", tasks.length)
 }).catch(function () {
