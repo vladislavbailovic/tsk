@@ -34,26 +34,23 @@ Task.load('test3').then(function (t) {
 */
 
 
-var Tasks = require('./lib/tasks');
-var NOBODY = '[\'"\\s]+$',
-	ANYBODY = '[\'"]?[^\'"]+[\'"]?\\s*$',
-	EMPTY_LIST = '\\[\\]',
-	NON_EMPTY_LIST = '\\[[^\\]]+\\]'
+var Tasks = require('./lib/tasks'),
+	Filters = require('./lib/filters')
 ;
 
 Tasks.filter({
 	/*and: [
-		{assigned: NOBODY}
+		{assigned: Filters.NOBODY}
 	],*/
 	/*
 	or: [
-		{assigned: ANYBODY},
-		{followers: NON_EMPTY_LIST}
+		{assigned: Filters.ANYBODY},
+		{followers: Filters.NON_EMPTY_LIST}
 	]
 	*/
 	and: [
-		{assigned: NOBODY},
-		{followers: NON_EMPTY_LIST}
+		{assigned: Filters.NOBODY},
+		{followers: Filters.NON_EMPTY_LIST}
 	]
 }).then(function (tasks) {
 	console.log("received", tasks.length);
